@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>ScoreKeeper Mobile Beta</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
+
+    <style>
+
+        canvas {
+            border:1px solid #c3c3c3;
+            position:relative;
+            width:80%;
+            height:80%;
+        }
+
+        center div {
+            position:relative;
+            float:left;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        var redCount = 0;
+        var greenCount = 0;
+
+        $(document).ready(function() {
+              $('canvas').bind('tap', function(event) {
+                switch (this.id){
+                    case 'A': 
+                        redCount++;
+                        $('#scoreRed').html(redCount);
+                        break;
+                    case 'B': 
+                        greenCount++;
+                        $('#scoreGreen').html(greenCount);
+                        break;
+                    case 'C': 
+                        redCount--;
+                        $('#scoreRed').html(redCount);
+                        break;       
+                    case 'D': 
+                        greenCount--;
+                        $('#scoreGreen').html(greenCount);
+                        break;    
+                } 
+              });
+
+              var message = 'A simple scoring app for 2 opponents.\nTap the big rectangle for a point.\nTap the small rectangle for a deduction.';
+              alert(message);
+            });
+        
+    </script>
+</head>
+<body> 
+
+<div data-role="page">
+
+    <div data-role="header">
+        <h1>ScoreKeeper Mobile App</h1>
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <center>
+            <div style="width:100%;height:15%;">
+                <div id="scoreRed" style="width:45%;height:100%;font: 30px bold 'Tahoma' sans-serif;">
+                    0
+                </div>
+                <div id="scoreGreen" style="width:45%;height:100%;font: 30px bold 'Tahoma' sans-serif;">
+                    0
+                </div>
+            </div>
+
+            <div style="width:100%;height:45%;">
+                <div style="width:45%;height:100%;">
+                    <canvas id="A" style="background-color:red;">
+                        Your browser does not support the canvas element.
+                    </canvas>
+                </div>
+
+                <div style="width:45%;height:100%;">
+                    <canvas id="B" style="background-color:green;">
+                        Your browser does not support the canvas element.
+                    </canvas>
+                </div>
+            </div>
+
+            <div style="width:100%;height:20%;"">
+                <div style="width:45%;height:100%;">
+                    <canvas id="C" style="background-color:red;">
+                        Your browser does not support the canvas element.
+                    </canvas>
+                </div>
+
+                <div style="width:45%;height:100%;">
+                    <canvas id="D" style="background-color:green;">
+                        Your browser does not support the canvas element.
+                    </canvas>
+                </div>
+            </div>
+        </center>
+    </div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>
