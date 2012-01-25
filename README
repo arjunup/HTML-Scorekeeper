@@ -1,0 +1,1 @@
+This project is a very simple mobile app that i threw together after being a scorekeeper at my son's wrestling meet. It is as simple to use as possible. 4 blocks, 2 for each opponent, that add or deduct points in 1 point increments. That's it. like I said, simple. It uses jQuery, jQuery Mobile and HTML5.
