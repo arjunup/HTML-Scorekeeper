@@ -47,6 +47,13 @@
                         $('#scoreGreen').html(greenCount);
                         break;    
                 }});
+                
+               $('#startGame').bind('click','tap',function(){
+	               		redCount = 0;
+	               	 	greenCount = 0;
+	               	 	$('#scoreRed').html(redCount);
+	               	 	$('#scoreGreen').html(greenCount);              
+               });
             });
     </script>
 </head>
@@ -67,7 +74,7 @@
         <div>
             <center>
                 <p>
-                    <a href="#app" style="">Start</a>
+                    <a id="startGame" href="#app" style="">Start</a>
                 </p>
             </center>
         </div>  
